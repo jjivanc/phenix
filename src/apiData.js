@@ -32,7 +32,7 @@ export async function apiData(){
         })
 
         const data = axios.all(array.map( (id,index)=> axios.get(`https://api.mangadex.org/cover/${id.id}`)
-        .then(res=> {return {...response.data.data[index],bannerURL:`https://uploads.mangadex.org/covers/${response.data.data[index].id}/${res.data.data.attributes.fileName}`}})))
+        .then(res=> {return {...response.data.data[index],bannerURL:`https://uploads.mangadex.org/covers/${response.data.data[index].id}/${res.data.data.attributes.fileName}.256.jpg`}})))
         //.then(res=> console.log(res.data.data.attributes.fileName))))
         return data
     })

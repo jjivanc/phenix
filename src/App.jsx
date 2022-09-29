@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import { apiData } from './apiData';
+import { BoxItem } from './components/BoxItem';
 
 function App() {
   const [count, setCount] = useState([]);
@@ -14,8 +14,8 @@ function App() {
   
 
   return (
-    <div className="App">
-      {count.map( item => <div key={item.id}><p>{item.id}</p><img src={item.bannerURL} /></div> )}
+    <div className='flex flex-wrap gap-2'>
+      {count.map( item => <BoxItem key={item.id} title={item.id} bannerURL={item.bannerURL} /> )}
     </div>
   )
 }
