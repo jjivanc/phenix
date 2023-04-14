@@ -36,7 +36,7 @@ async function getMangaCover(arr) {
     return ;
 }
     
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await axios.get("https://api.mangadex.org/manga");
   //const data = response.data.data;
   const data = await axios('https://api.mangadex.org/manga')
